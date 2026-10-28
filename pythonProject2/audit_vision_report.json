@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-10-28T15:33:01+00:00",
+  "multi": {
+    "mode": "multi",
+    "groups": [
+      {
+        "platform": "美团",
+        "product": "麻辣香锅",
+        "quotes": [
+          "Quote(sku_id='麻辣香锅', persona_id='P1', list_price=34.0, coupon_discount=0.0, member_discount=0.0, delivery_fee=3.0, packaging_fee=2.0, estimated_total=39.0, promo_tag=None, platform='美团', product_name='麻辣香锅', collected_at='2026-10-28 12:00:00', source_image='meituan_old.jpg')",
+          "Quote(sku_id='麻辣香锅', persona_id='P2', list_price=34.0, coupon_discount=10.0, member_discount=0.0, delivery_fee=3.0, packaging_fee=2.0, estimated_total=29.0, promo_tag='new_user_promo', platform='美团', product_name='麻辣香锅', collected_at='2026-10-28 12:00:05', source_image='meituan_new.jpg')",
+          "Quote(sku_id='麻辣香锅', persona_id='P3', list_price=35.0, coupon_discount=0.0, member_discount=0.0, delivery_fee=0.0, packaging_fee=2.0, estimated_total=37.0, promo_tag=None, platform='美团', product_name='麻辣香锅', collected_at='2026-10-28 12:00:10', source_image='meituan_member.jpg')"
+        ],
+        "personas": {
+          "P1": "Persona(pid='P1', label='老用户', is_member=False, order_cnt_90d=30, device_tier='中端机', region='北京')",
+          "P2": "Persona(pid='P2', label='新用户', is_member=False, order_cnt_90d=0, device_tier='中端机', region='北京')",
+          "P3": "Persona(pid='P3', label='付费会员', is_member=True, order_cnt_90d=45, device_tier='中端机', region='北京')"
+        },
+        "findings": [
+          "Finding(sku_id='麻辣香锅', persona_id='P1', persona_label='老用户', final_price=39.0, base_price=37.0, diff_rate=0.0541, risk_score=8.1, reason='实付价比同平台同商品中位价高 5.4%；高频忠诚用户（90天30单）；未获得任何优惠券；无合理促销因素说明', source_image='meituan_old.jpg', total_mismatch=0.0)"
+        ],
+        "coupon_issue": {
+          "type": "差异化发券",
+          "new_user_avg_coupon": 10.0,
+          "old_user_avg_coupon": 0.0,
+          "gap": 10.0,
+          "note": "老用户平均券额显著低于新用户"
+        }
+      },
+      {
+        "platform": "淘宝闪购",
+        "product": "麻辣香锅",
+        "quotes": [
+          "Quote(sku_id='麻辣香锅', persona_id='P1', list_price=30.0, coupon_discount=10.0, member_discount=0.0, delivery_fee=2.0, packaging_fee=1.0, estimated_total=23.0, promo_tag='new_user_promo', platform='淘宝闪购', product_name='麻辣香锅', collected_at='2026-10-28 12:05:00', source_image='taobao_new.jpg')"
+        ],
+        "personas": {
+          "P1": "Persona(pid='P1', label='新用户', is_member=False, order_cnt_90d=0, device_tier='中端机', region='北京')"
+        },
+        "findings": [],
+        "coupon_issue": null
+      },
+      {
+        "platform": "京东外卖",
+        "product": "麻辣香锅",
+        "quotes": [
+          "Quote(sku_id='麻辣香锅', persona_id='P1', list_price=35.0, coupon_discount=0.0, member_discount=2.0, delivery_fee=0.0, packaging_fee=2.0, estimated_total=35.0, promo_tag=None, platform='京东外卖', product_name='麻辣香锅', collected_at='2026-10-28 12:10:00', source_image='jd_member.jpg')"
+        ],
+        "personas": {
+          "P1": "Persona(pid='P1', label='付费会员', is_member=True, order_cnt_90d=45, device_tier='中端机', region='北京')"
+        },
+        "findings": [],
+        "coupon_issue": null
+      }
+    ],
+    "cross_platform": {
+      "麻辣香锅": {
+        "美团": {
+          "min_price": 29.0,
+          "count": 3,
+          "images": [
+            "meituan_old.jpg",
+            "meituan_new.jpg",
+            "meituan_member.jpg"
+          ]
+        },
+        "淘宝闪购": {
+          "min_price": 23.0,
+          "count": 1,
+          "images": [
+            "taobao_new.jpg"
+          ]
+        },
+        "京东外卖": {
+          "min_price": 35.0,
+          "count": 1,
+          "images": [
+            "jd_member.jpg"
+          ]
+        }
+      }
+    },
+    "skipped": []
+  },
+  "single": {
+    "mode": "single",
+    "image": "meituan_old.jpg",
+    "platform": "美团",
+    "product": "麻辣香锅",
+    "user_label": "老用户",
+    "final_price": 39.0,
+    "breakdown": {
+      "list_price": 34.0,
+      "delivery_fee": 3.0,
+      "packaging_fee": 2.0,
+      "coupon_discount": 0.0,
+      "member_discount": 0.0
+    },
+    "baseline_price": 35.0,
+    "baseline_sample_size": 128,
+    "diff_rate": 0.1143,
+    "promo_tag": null,
+    "reasonable": false,
+    "suspected": true,
+    "risk_score": 13.7,
+    "total_mismatch": 0.0,
+    "evidence": {
+      "sha256": "0fc2dc5de3805a9d57c12fedfa8daa6a7d08425db622df578158a210b92a5d21",
+      "timestamp": "2026-10-28T15:33:01+00:00",
+      "algorithm": "SHA-256"
+    }
+  }
+}
